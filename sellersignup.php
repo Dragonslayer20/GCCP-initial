@@ -10,16 +10,17 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     $cpassword = $_POST['cpassword'];
     $service = $_POST['service'];
     $location = $_POST['location'];
-    $sql1 = "SELECT * from `internship`.`sellersignup` where username= '$username' and email='$email' ";
+    $sql1 = "SELECT * from `internship`.`studentsignup` where username= '$username' and email='$email' ";
     $result1 = mysqli_query($conn , $sql1) or die(mysqli_error($sql1));
     $num = mysqli_num_rows($result1);
     if($num == 0){
-        if($password == $cpassword && $username != "" && $email!=""){
+        if($password == $cpassword && $username != "" && $email!="")
+        {
             $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql =" INSERT into `internship`.`sellersignup` VALUES('null','$username','$email','$phoneno','$hash','$cpassword','$service',' $location')";
+            $sql =" INSERT into `internship`.`studentsignup` VALUES('null','$username','$email','$phoneno','$hash','$cpassword','$service',' $location')";
             $result = mysqli_query($conn , $sql)  or die( mysqli_error($conn));
 
-            $table = $username.'seller';
+            $table = $username.'student';
             $sql ="CREATE TABLE `internship`.`$table`(
                buyers varchar(255),
                dates varchar(255),
@@ -27,7 +28,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
            )";
            $result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
-            header("location:sellerlogin.php");
+            header("location:studentlogin.php");
         }
         else{
             $showalert = true;
@@ -64,7 +65,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     </style>
 </head>
 <body>
-<?php require "seller/nav.php";?>
+<?php require "student/nav.php";?>
 <script> <?php if($showerror){
         echo 'alert("Username or email is already exist");';
         } 
@@ -74,7 +75,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 </script>
     <div class="middle">
         <div class="table1">
-        <form action="sellersignup.php" method="post">
+        <form action="studentsignup.php" method="post">
                 <h2><b>Register as a Professionals</b></h2>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Username</label>
