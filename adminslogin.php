@@ -15,7 +15,7 @@
              session_start();
              $_SESSION['loggedin'] = true;
              $_SESSION['username'] = $username;
-             header("location:admins/post_requirement_form.php");
+             header("location:admins/index.php");
         }else{
             
             $showerror = true;

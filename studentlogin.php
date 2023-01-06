@@ -16,7 +16,7 @@
              $_SESSION['loggedin'] = true;
              $_SESSION['username'] = $username;
              //$_SESSION['fullscreen']= true;
-             header("location:student/post.php");
+             header("location:student/index.php");
         }else{
             
             $showerror = true;

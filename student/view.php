@@ -184,10 +184,6 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
                     <div id="popup-1"class="close-btn" onclick="togglepopup()">
                             &times;
                     </div>
-                    <div class="head1">
-                        <h2>'.$data['buyername'].'</h2>
-                        <h4>'.$date.'</h4>
-                    </div>
                     <div class="middle">   
                         <form action="view.php" method="post" >
                             <h4 style="float:left;float: left;padding-left: 10%;padding-bottom: 1%;">Requirement details</h4>

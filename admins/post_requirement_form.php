@@ -65,6 +65,7 @@ if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true){
               </script></b>';
       }
   ?>
+  
   <?php include "nav.php";  ?>  
 <!-- form  -->
   <div class="middle">

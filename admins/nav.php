@@ -23,6 +23,9 @@ echo '<nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="color:whit
               echo 
                     '</li>
                     <li class="nav-item">
+                      <a class="nav-link" href="index.php">home</a>
+                    </li>
+                    <li class="nav-item">
                       <a class="nav-link" href="student.php"> Student Enrolment </a>
                     </li>
                     <li class="nav-item">
